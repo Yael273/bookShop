@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/bookDefault.png" type="image/x-icon">
+    <title>Book Shop</title>
+</head>
+
+<body onload="onInit()">
+    <div class="main-container">
+        <h1>Book Shop</h1>
+        <button class="addBook" onclick="onAddBook()">Create new book</button>
+        <div class="nextPrev-cointainer">
+            <button class="onPrevPage" onclick="onPrevPage()">Prev Page</button>
+            <button class="nextPage" onclick="onNextPage()">Next Page</button>
+        </div>
+        <div class="select-search-container">
+            <section class="book-filter">
+                <select name="filter-select" onchange="onSetFilterBy(this.value)">
+                    <option value="all">All</option>
+                    <option value="max-price">Max Price</option>
+                    <option value="min-rate">Min rate</option>
+                </select>
+            </section>
+            <form class="search" onsubmit="onSearch(event)">
+                <input type="search" name="search" placeholder="search" />
+                <button class="search-button">🔍</button>
+            </form>
+        </div>
+        <section class="books-container">
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>rating</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+    <div class="modal">
+        <img src="img/bookDefault.png" alt="book cover" />
+        <h4>Price: $<span></span> </h4>
+        <div>
+            <button onclick="onPlusRating()">+</button>
+            <input type="number" class="rate" name="rate" value="0" min="0" max="10">
+            <button onclick="onMinRating()">-</button>
+        </div>
+        <h5>book Description: </h5>
+        <p></p>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+
+    <footer>
+        <nav>
+            <a href="#">&#8593;</a>
+        </nav>
+    </footer>
+    <div class="user-msg"></div>
+    <script src="js/util.js"></script>
+    <script src="js/service/storage-service.js"></script>
+    <script src="js/service/book-service.js"></script>
+    <script src="js/controller.js"></script>
+
+</body>
+
+</html>

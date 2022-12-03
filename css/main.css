@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 5px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(237, 229, 220);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 57, 47);
+}
+
+.main-container {
+    text-align: center;
+    /* background-color: rgb(30, 57, 47); */
+    margin: 10px;
+    padding: 20px;
+    width: 90vw;
+    /* height: 150vh; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+    color: rgb(115, 170, 143);
+    font-weight: bold;
+    font-size: 4em;
+    margin: -5px;
+    margin-left: 7px;
+}
+
+table {
+    margin: 10px;
+    background-color: rgb(115, 170, 143);
+    padding: 5px;
+    /* border: black solid 2px; */
+    border-radius: 5px;
+}
+
+thead th {
+    color: rgb(254, 251, 249);
+    padding-bottom: 10px;
+    width: 20vw;
+}
+
+td {
+    /* text-align: left; */
+    background-color: rgb(254, 251, 249);
+    /* border: black solid 2px; */
+    padding: 5px;
+    margin: 5px;
+    width: 20vw;
+}
+
+.modal {
+    background-color: rgb(228, 222, 215);
+    padding: 20px;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    height: 80vh;
+    min-width: 300px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.modal.open {
+    left: 55%;
+    transition: left 1s;
+}
+
+.modal h3 {
+    color: pink;
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+
+.modal>p {
+    text-align: left;
+    font-size: 14px;
+}
+
+img {
+    height: 30vh;
+}
+
+.read {
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    /* color: green; */
+}
+
+.update {
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    /* color: rgb(255, 200, 0); */
+}
+
+.remove {
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    /* color: rgb(65, 144, 228); */
+}
+
+button {
+    opacity: 0.5;
+    font-weight: bold;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: rgb(115, 170, 143);
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} */
+input {
+    text-align: center;
+    /* width: 30px; */
+}
+
+footer nav {
+    color: black;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 15px;
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    width: 4vw;
+}
+
+footer nav:hover {
+    background-color: rgb(115, 170, 143);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+}
+a:after{
+    color: black;
+}
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    order: 3;
+}
+
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    left: 10px;
+    background-color: rgba(49, 93, 77, 0.759);
+    padding: 10px;
+    border-radius: 5px;
+    color: antiquewhite;
+}
+
+.user-msg.open {
+    bottom: 10px;
+    transition: bottom .5s;
+}
+
+/* .nextPrev-cointainer{
+    position:fixed;
+    left: 100%;
+} */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextPrev-cointainer {
+    /* position: relative;
+    right: 30vw;
+    top: 9vh; */
+    order: 4;
+
+}
+
+.book-filter {
+    position: absolute;
+    right: 0;
+    top: 5vh;
+    margin-right: 8vw;
+}
+
+.addBook {
+    order: 2;
+    margin: 10px;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/font/MarginDemo-7B6ZE.otf);
+}
+
+.search {
+    position: absolute;
+    right: 7vw;
+    top: 9vh;
+}
+
+@media (max-width: 620px) {
+    .main-container {
+        text-align: center;
+        background-color: rgb(30, 57, 47);
+        margin: 10px;
+        padding: 20px;
+        width: 90vw;
+        /* height: 150vh; */
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    /* .select-search-container{
+        
+    } */
+
+    .search {
+        position: absolute;
+        right: 37vw;
+        top: 11vh;
+        width: 2px;
+    }
+
+    .search-button {
+        position: absolute;
+        bottom: 30px;
+        left: 15px;
+        visibility: hidden;
+    }
+    input {
+        text-align: center;
+        margin-left: 30px;
+        width: 120px;
+    }
+    .book-filter {
+        position: absolute;
+        right: 0;
+        top: 7vh;
+        margin-right: 48px;
+    }
+}
